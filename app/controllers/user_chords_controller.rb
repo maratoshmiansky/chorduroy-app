@@ -1,0 +1,2 @@
+class UserChordsController < ApplicationController
+end
