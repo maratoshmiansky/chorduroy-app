@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   delete "/user_chords/:id" => "user_chords#destroy"
 
   post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end
