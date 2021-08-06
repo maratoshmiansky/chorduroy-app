@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/user_chords/:id" => "user_chords#show"
   # patch "/user_chords/:id" => "user_chords#update"
   delete "/user_chords/:id" => "user_chords#destroy"
+
+  post "/users" => "users#create"
 end
