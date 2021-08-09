@@ -2,12 +2,12 @@ class UserChordsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    user_chords = UserChord.find(current_user.id)
+    user_chords = UserChord.where(user_id: current_user.id)
     render json: user_chords
   end
 
   def show
-    user_chord = UserChord.find(params[:id])
+    user_chord = UserChord.where(user_id: current_user.id, id: params[:id])
     render json: user_chord
   end
 
