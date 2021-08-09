@@ -7,13 +7,14 @@ class UserChordsController < ApplicationController
   end
 
   def show
-    user_chord = UserChord.where(user_id: current_user.id, id: params[:id])
+    # user_chord = UserChord.where(user_id: current_user.id, id: params[:id])
+    user_chord = UserChord.find_by(id: params[:id])
     render json: user_chord
   end
 
   def create
     user_chord = UserChord.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       chord_id: params[:chord_id],
       catalog: params[:catalog],
     )
